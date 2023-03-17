@@ -1,0 +1,12 @@
+WiFi:
+nmcli c up <SSID> --ask
+nmcli device wifi connect "SSID" password "password"
+
+Brightness:
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+
+Printer:
+sudo lpadmin -p <printer_name> -E -v ipp://<ip_address>/ipp/print -m everywhere
+scanimage -L
+scanimage -d "<DEVICE>" --format=pdf --resolution 600 -o name.pdf

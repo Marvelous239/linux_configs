@@ -2,7 +2,7 @@ export PATH=$PATH:/home/amarvin/.local/bin
 export PATH=$PATH:/usr/share/applications
 
 PROMPT_DIRTRIM=2
-PS1='\u@\w: '
+PS1='\e[0;32m\u@\w:\e[m '
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     exec tmux
