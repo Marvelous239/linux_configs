@@ -1,0 +1,23 @@
+#! /bin/python3
+import os
+
+USER = 'amarvin'
+
+FileLocs = {
+    '.bash_aliases': f'/home/{USER}/.bash_aliases',
+    '.bash_custom': f'/home/{USER}/.bash_custom',
+    'i3-config': f'/home/{USER}/.config/i3/config',
+    '.tmux.conf': f'/home/{USER}/.tmux.conf',
+    '.vimrc': f'/home/{USER}/.vimrc',
+}
+
+# Cache current file if it exists
+if not os.path.isdir('cache'):
+    os.mkdir('cache')
+for _, p in FileLocs.items():
+    if os.path.exists(p):
+        os.rename(p, f'cache/{os.path.basename(p)}')
+
+# Create link
+for f, p in FileLocs.items():
+    os.symlink(os.path.abspath(f), p)
