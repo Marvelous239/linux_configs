@@ -21,3 +21,8 @@ for _, p in FileLocs.items():
 # Create link
 for f, p in FileLocs.items():
     os.symlink(os.path.abspath(f), p)
+
+# bash_custom
+with open(f'/home/{USER}/.bashrc', 'a') as f:
+    f.write('''\n\nif [ -f ~/.bash_custom ]; then\n\t. ~/.bash_custom\nfi''')
+
