@@ -2,9 +2,9 @@ export PATH=$PATH:/home/amarvin/.local/bin
 export PATH=$PATH:/usr/share/applications
 
 PROMPT_DIRTRIM=2
-PS1='\e[0;32m\u@\w:\e[m '
+export PS1="\[$(tput setaf 10)\]\u\[$(tput setaf 10)\]@\[$(tput setaf 33)\]\w\[$(tput sgr0)\]: "
 
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+if command -v tmux &> /dev/null && [ -z "$TMUX" ] && [[ $(tty) != *"tty"* ]]; then
     exec tmux
 fi
 

@@ -7,6 +7,9 @@ set wildmode=longest,full
 set wildmenu
 set foldcolumn=1
 set incsearch hlsearch
+set ignorecase
+set smartcase
+au InsertLeave /* :set nopaste
 
 " File settings
 filetype plugin indent on

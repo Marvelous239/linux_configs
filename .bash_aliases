@@ -13,6 +13,7 @@ alias lfindf='sudo find . -type f -name'
 alias lfindd='sudo find . -type d -name'
 alias sdn='shutdown -h now'
 alias btctl='bluetoothctl'
+alias asearch='apt-cache search'
 
 # Apps
 alias vd='visidata'
