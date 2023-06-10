@@ -1,6 +1,6 @@
 # Commands
-alias lsa='ls -lh'
-alias lsaa='ls -lah'
+alias lsa='ls -lh --group-directories-first'
+alias lsaa='ls -lah --group-directories-first'
 alias c='clear'
 alias vi='vim'
 alias svi='sudo -E vim'

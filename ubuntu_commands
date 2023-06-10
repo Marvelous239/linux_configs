@@ -10,3 +10,6 @@ Printer:
 sudo lpadmin -p <printer_name> -E -v ipp://<ip_address>/ipp/print -m everywhere
 scanimage -L
 scanimage -d "<DEVICE>" --format=pdf --resolution 600 -o name.pdf
+
+Audio:
+pavucontrol
