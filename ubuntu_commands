@@ -13,3 +13,6 @@ scanimage -d "<DEVICE>" --format=pdf --resolution 600 -o name.pdf
 
 Audio:
 pavucontrol
+
+Video:
+melt VID_20231214_* -consumer avformat:Rear.MOV acodec=libmp3lame vcodec=libx264

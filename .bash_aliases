@@ -2,7 +2,7 @@
 alias lsa='ls -lh --group-directories-first'
 alias lsaa='ls -lah --group-directories-first'
 alias c='clear'
-alias vi='vim'
+alias vi='nvim'
 alias svi='sudo -E vim'
 alias sourcer='source ~/.bashrc'
 alias py='python3'

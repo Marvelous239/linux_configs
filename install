@@ -3,23 +3,24 @@ import os
 
 USER = os.getlogin()
 
-FileLocs = {
+FilePaths = {
     '.bash_aliases': f'/home/{USER}/.bash_aliases',
     '.bash_custom': f'/home/{USER}/.bash_custom',
-    'i3-config': f'/home/{USER}/.config/i3/config',
     '.tmux.conf': f'/home/{USER}/.tmux.conf',
     '.vimrc': f'/home/{USER}/.vimrc',
+    'init.vim': f'/home/{USER}/.config/nvim/init.vim',
+    'init.lua': f'/home/{USER}/.config/nvim/lua/init.lua',
 }
 
 # Cache current file if it exists
 if not os.path.isdir('cache'):
     os.mkdir('cache')
-for _, p in FileLocs.items():
+for _, p in FilePaths.items():
     if os.path.exists(p):
         os.rename(p, f'cache/{os.path.basename(p)}')
 
 # Create link
-for f, p in FileLocs.items():
+for f, p in FilePaths.items():
     os.symlink(os.path.abspath(f), p)
 
 # bash_custom
