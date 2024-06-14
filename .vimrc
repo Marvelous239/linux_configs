@@ -13,6 +13,8 @@ set showtabline=2
 
 set wildmode=longest,full
 set wildmenu
+set splitright
+set splitbelow
 
 " File settings
 filetype plugin indent on
