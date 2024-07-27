@@ -22,7 +22,8 @@ syntax on
 
 " Theme
 if has('nvim')
-    colorscheme retrobox
+    set notermguicolors
+    colorscheme catppuccin
 else
     colorscheme peachpuff
 endif
@@ -95,3 +96,4 @@ endif
 " Misc
 noremap confe :tabe ~/.vimrc
 noremap confr :so ~/.vimrc
+noremap confn :Te ~/.config/nvim

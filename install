@@ -8,8 +8,8 @@ FilePaths = {
     '.bash_custom': f'/home/{USER}/.bash_custom',
     '.tmux.conf': f'/home/{USER}/.tmux.conf',
     '.vimrc': f'/home/{USER}/.vimrc',
-    'init.vim': f'/home/{USER}/.config/nvim/init.vim',
-    'init.lua': f'/home/{USER}/.config/nvim/lua/init.lua',
+    #'init.vim': f'/home/{USER}/.config/nvim/init.vim',
+    #'init.lua': f'/home/{USER}/.config/nvim/lua/init.lua',
 }
 
 # Cache current file if it exists
