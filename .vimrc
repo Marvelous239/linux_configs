@@ -39,6 +39,13 @@ hi SpellBad cterm=bold ctermbg=black ctermfg=red
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 au InsertLeave /* :set nopaste
 
+let mapleader=","
+nmap ce :tabe ~/.vimrc<CR>
+nmap cr :so ~/.vimrc<CR>
+nmap cn :Te ~/.config/nvim<CR>
+nmap css :execute 'vs '.expand('%:r').'.css'<CR>
+nmap cse :execute 'edit '.expand('%:r').'.css'<CR>
+
 " Neovim
 if has('nvim')
     " If you prefer the Omni-Completion tip window to close when a selection is
@@ -92,8 +99,3 @@ endif
 "set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 "map <c-n> :cn<CR>
 "map <c-p> :cp<CR>
-
-" Misc
-noremap confe :tabe ~/.vimrc
-noremap confr :so ~/.vimrc
-noremap confn :Te ~/.config/nvim
