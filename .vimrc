@@ -39,11 +39,11 @@ hi SpellBad cterm=bold ctermbg=black ctermfg=red
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 au InsertLeave /* :set nopaste
 
-let mapleader=","
+"let mapleader=","
 nmap ce :tabe ~/.vimrc<CR>
 nmap cr :so ~/.vimrc<CR>
 nmap cn :Te ~/.config/nvim<CR>
-nmap css :execute 'vs '.expand('%:r').'.css'<CR>
+nmap css :execute 'vs '.expand('%:r').'.css'<CR><C-w><Left>
 nmap cse :execute 'edit '.expand('%:r').'.css'<CR>
 
 " Neovim
