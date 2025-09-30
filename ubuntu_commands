@@ -16,3 +16,4 @@ pavucontrol
 
 Video:
 melt VID_20231214_* -consumer avformat:Rear.MOV acodec=libmp3lame vcodec=libx264
+yt-dlp -x --audio-format mp3 "https://www.youtube.com/watch?v=E-ApAsl8K2I" -o 2021-05-02

@@ -21,12 +21,7 @@ filetype plugin indent on
 syntax on
 
 " Theme
-if has('nvim')
-    set notermguicolors
-    colorscheme catppuccin
-else
-    colorscheme peachpuff
-endif
+colorscheme default
 hi Search ctermfg=black
 hi Visual ctermbg=black
 hi Folded ctermbg=238 ctermfg=252
@@ -38,13 +33,19 @@ hi SpellBad cterm=bold ctermbg=black ctermfg=red
 " Keybinds
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 au InsertLeave /* :set nopaste
+nmap <C-Up> :tabprevious<CR>
+nmap <C-Down> :tabnext<CR>
+nmap <A-Up> :tabmove -<CR>
+nmap <A-Down> :tabmove +<CR>
 
 "let mapleader=","
 nmap ce :tabe ~/.vimrc<CR>
 nmap cr :so ~/.vimrc<CR>
-nmap cn :Te ~/.config/nvim<CR>
+nmap cn :tabe ~/.config/nvim<CR>
 nmap css :execute 'vs '.expand('%:r').'.css'<CR><C-w><Left>
 nmap cse :execute 'edit '.expand('%:r').'.css'<CR>
+nmap ee :Oil<CR>
+nmap et :execute 'tabe '.expand('%:h')<CR>
 
 " Neovim
 if has('nvim')
