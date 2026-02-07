@@ -1,0 +1,6 @@
+{
+    "editor.lineNumbers": "relative",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "security.workspace.trust.enabled": false,
+}

@@ -1,0 +1,101 @@
+// Place your key bindings in this file to override the defaults
+[
+    // Custom keybindings for navigating and moving editor groups
+    {
+        "key": "ctrl+up",
+        "command": "workbench.action.previousEditor",
+        "when": "editorFocus || terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "workbench.action.nextEditor",
+        "when": "editorFocus || terminalEditorFocus"
+    },
+    {
+        "key": "alt+up",
+        "command": "workbench.action.moveEditorLeftInGroup",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "workbench.action.moveEditorRightInGroup",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "workbench.action.previousSideBarView",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "workbench.action.nextSideBarView",
+        "when": "sideBarFocus"
+    },
+
+    // Tmux style keybindings for focusing different areas of the workbench
+    {
+        "key": "ctrl+a left",
+        "command": "workbench.action.focusSideBar",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+a left",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "!sideBarFocus && !editorFocus"
+    },
+    {
+        "key": "ctrl+a right",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "ctrl+a right",
+        "command": "workbench.action.focusAuxiliaryBar",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+a down",
+        "command": "workbench.action.focusPanel"
+    },
+    {
+        "key": "ctrl+a up",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+
+    // Override Ctrl+d to close the sidebar, auxiliary bar, or bottom panel depending on the context
+    {
+        "key": "ctrl+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-notebook.addFindMatchToSelection",
+        "when": "config.notebook.multiCursor.enabled && notebookCellEditorFocused && activeEditor == 'workbench.editor.notebook'"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-extension.vim_ctrl+d",
+        "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-list.focusPageDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.toggleAuxiliaryBar",
+        "when": "!sideBarFocus && !editorFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.togglePanel",
+        "when": "panelFocus"
+    }
+]

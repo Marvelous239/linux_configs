@@ -1,9 +1,7 @@
 " General
 set number relativenumber
 set mouse=v
-if !has('nvim')
-    set ttymouse=xterm2
-endif
+set ttymouse=xterm2
 set autoindent expandtab tabstop=4 shiftwidth=4
 set foldcolumn=1
 set incsearch hlsearch
@@ -41,20 +39,9 @@ nmap <A-Down> :tabmove +<CR>
 "let mapleader=","
 nmap ce :tabe ~/.vimrc<CR>
 nmap cr :so ~/.vimrc<CR>
-nmap cn :tabe ~/.config/nvim<CR>
 nmap css :execute 'vs '.expand('%:r').'.css'<CR><C-w><Left>
 nmap cse :execute 'edit '.expand('%:r').'.css'<CR>
-nmap ee :Oil<CR>
 nmap et :execute 'tabe '.expand('%:h')<CR>
-
-" Neovim
-if has('nvim')
-    " If you prefer the Omni-Completion tip window to close when a selection is
-    " made, these lines close it on movement in insert mode or when leaving
-    " insert mode
-    autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-    autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-endif
 
 " ctags and cscope
 "set tags=./tags;,tags;
