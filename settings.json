@@ -1,6 +1,35 @@
 {
-    "editor.lineNumbers": "relative",
+    // General
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "security.workspace.trust.enabled": false,
+    "editor.wordBasedSuggestions": "allDocuments",
+    "editor.suggest.showWords": true,
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "on",
+        "strings": "on",
+    },
+
+    // Vim
+    "editor.lineNumbers": "relative",
+    "vim.leader": ",",
+    "vim.foldfix": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["|"],
+            "after": ["<C-w>", "v"]
+        },
+        {
+            "before": ["_"],
+            "after": ["<C-w>", "s"]
+        }
+    ],
+
+    // Python
+    "python.languageServer": "Pylance",
+    "[python]": {
+        "editor.wordBasedSuggestions": "allDocuments",
+        "editor.suggest.showWords": true,
+    }
 }
