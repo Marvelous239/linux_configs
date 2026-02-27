@@ -1,5 +1,12 @@
 // Place your key bindings in this file to override the defaults
 [
+    // Get here faster
+    {
+        "key": "ctrl+shift+k ctrl+shift+s",
+        "command": "workbench.action.openGlobalKeybindingsFile",
+        "when": "editorFocus || terminalEditorFocus"
+    },
+    
     // Custom keybindings for navigating and moving editor groups
     {
         "key": "ctrl+up",
@@ -31,6 +38,13 @@
         "command": "workbench.action.nextSideBarView",
         "when": "sideBarFocus"
     },
+    // ctrl+down comm wb.a.nextPanelView when panelFocus
+    // ctrl+up comm wb.a.previousPanelView when panelFocus
+    // ctrl+left comm wb.files.a.collapseExplorerFolders when explorerViewletFocus
+    // ctrl+shift+left comm wb.a.focusLeftGroup when editorTextFocus
+    // ctrl+shift+right comm wb.a.focusRightGroup when editorTextFocus
+    // ctrl+shift+up comm wb.a.focusAboveGroup when editorTextFocus
+    // ctrl+shift+down comm wb.a.focusBelowGroup when editorTextFocus
 
     // Tmux style keybindings for focusing different areas of the workbench
     {
@@ -98,4 +112,16 @@
         "command": "workbench.action.togglePanel",
         "when": "panelFocus"
     }
+
+    // Vim extension
+    // Remove vim ctrl f,p,k,s,e,y,n
+    // ctrl+e comm editorScrool args (to: down, by: wrappedLine, value: 1, revealCursor: true) when editorTextFocus
+    // ctrl+y comm editorScrool args (to: up, by: wrappedLine, value: 1, revealCursor: true) when editorTextFocus
+    // ctrl+n comm editor.a.triggerSuggest when editorTextFocus && !suggestWidgetVisible
+    // ctrl+n comm selectNextSuggestion when suggestWidgetVisible
+    // ctrl+p comm editor.a.triggerSuggest when editorTextFocus && !suggestWidgetVisible
+    // ctrl+p comm selectPrevSuggestion when suggestWidgetVisible
+
+    // Vim leader strokes
+    // , s w comm actions.find when editorTextFocus && vim.mode == 'Visual'
 ]
