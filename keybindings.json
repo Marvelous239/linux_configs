@@ -75,6 +75,10 @@
         "key": "ctrl+a up",
         "command": "workbench.action.focusActiveEditorGroup"
     },
+    // ctrl+a shift+\\ comm wb.a.newGroupRight when editorFocus
+    // ctrl+a shift+- comm wb.a.newGroupBelow when editorFocus
+    // ctrl+a z comm wb.a.toggleMaximizedEditorGroup when editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups
+    // -ctrl+k ctrl+m
 
     // Override Ctrl+d to close the sidebar, auxiliary bar, or bottom panel depending on the context
     {
@@ -105,13 +109,14 @@
     {
         "key": "ctrl+d",
         "command": "workbench.action.toggleAuxiliaryBar",
-        "when": "!sideBarFocus && !editorFocus"
+        "when": "auxillaryBarFocus"
     },
     {
         "key": "ctrl+d",
         "command": "workbench.action.togglePanel",
         "when": "panelFocus"
     }
+    // ctrl+d comm wb.a.closeEditorsAndGroup when activeEditorGroupEmpty
 
     // Vim extension
     // Remove vim ctrl f,p,k,s,e,y,n
