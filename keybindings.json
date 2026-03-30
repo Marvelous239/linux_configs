@@ -3,8 +3,7 @@
     // Get here faster
     {
         "key": "ctrl+shift+k ctrl+shift+s",
-        "command": "workbench.action.openGlobalKeybindingsFile",
-        "when": "editorFocus || terminalEditorFocus"
+        "command": "workbench.action.openGlobalKeybindingsFile"
     },
     
     // Custom keybindings for navigating and moving editor groups
@@ -29,22 +28,50 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+up",
+        "key": "ctrl+shift+up",
         "command": "workbench.action.previousSideBarView",
         "when": "sideBarFocus"
     },
     {
-        "key": "ctrl+down",
+        "key": "ctrl+shift+down",
         "command": "workbench.action.nextSideBarView",
         "when": "sideBarFocus"
     },
-    // ctrl+down comm wb.a.nextPanelView when panelFocus
-    // ctrl+up comm wb.a.previousPanelView when panelFocus
-    // ctrl+left comm wb.files.a.collapseExplorerFolders when explorerViewletFocus
-    // ctrl+shift+left comm wb.a.focusLeftGroup when editorTextFocus
-    // ctrl+shift+right comm wb.a.focusRightGroup when editorTextFocus
-    // ctrl+shift+up comm wb.a.focusAboveGroup when editorTextFocus
-    // ctrl+shift+down comm wb.a.focusBelowGroup when editorTextFocus
+    {
+        "key": "ctrl+down",
+        "command": "workbench.action.nextPanelView",
+        "when": "panelFocus"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "workbench.action.previousPanelView",
+        "when": "panelFocus"
+    },
+    {
+        "key": "ctrl+left",
+        "command": "workbench.files.action.collapseExplorerFolders",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "ctrl+shift+left",
+        "command": "workbench.action.focusLeftGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "workbench.action.focusRightGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+up",
+        "command": "workbench.action.focusAboveGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "workbench.action.focusBelowGroup",
+        "when": "editorTextFocus"
+    },
 
     // Tmux style keybindings for focusing different areas of the workbench
     {
@@ -75,10 +102,26 @@
         "key": "ctrl+a up",
         "command": "workbench.action.focusActiveEditorGroup"
     },
-    // ctrl+a shift+\\ comm wb.a.newGroupRight when editorFocus
-    // ctrl+a shift+- comm wb.a.newGroupBelow when editorFocus
-    // ctrl+a z comm wb.a.toggleMaximizedEditorGroup when editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups
-    // -ctrl+k ctrl+m
+    {
+        "key": "ctrl+a shift+\\",
+        "command": "workbench.action.newGroupRight",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+a shift+-",
+        "command": "workbench.action.newGroupBelow",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+a z",
+        "command": "workbench.action.toggleMaximizedEditorGroup",
+        "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+    },
+    {
+        "key": "ctrl+k ctrl+m",
+        "command": "-workbench.action.toggleMaximizeEditorGroup",
+        "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+    },
 
     // Override Ctrl+d to close the sidebar, auxiliary bar, or bottom panel depending on the context
     {
@@ -109,24 +152,124 @@
     {
         "key": "ctrl+d",
         "command": "workbench.action.toggleAuxiliaryBar",
-        "when": "auxillaryBarFocus"
+        "when": "!sideBarFocus && !editorFocus"
     },
     {
         "key": "ctrl+d",
         "command": "workbench.action.togglePanel",
         "when": "panelFocus"
-    }
-    // ctrl+d comm wb.a.closeEditorsAndGroup when activeEditorGroupEmpty
+    },
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.closeEditorsInGroup",
+        "when": "activeEditorGroupEmpty"
+    },
 
     // Vim extension
-    // Remove vim ctrl f,p,k,s,e,y,n
-    // ctrl+e comm editorScrool args (to: down, by: wrappedLine, value: 1, revealCursor: true) when editorTextFocus
-    // ctrl+y comm editorScrool args (to: up, by: wrappedLine, value: 1, revealCursor: true) when editorTextFocus
-    // ctrl+n comm editor.a.triggerSuggest when editorTextFocus && !suggestWidgetVisible
-    // ctrl+n comm selectNextSuggestion when suggestWidgetVisible
-    // ctrl+p comm editor.a.triggerSuggest when editorTextFocus && !suggestWidgetVisible
-    // ctrl+p comm selectPrevSuggestion when suggestWidgetVisible
+    {
+        "key": "ctrl+e",
+        "command": "-extension.vim_ctrl+e",
+        "when": "editorTextFocus && vim.active && vim.use<C-e> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-extension.vim_ctrl+f",
+        "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-extension.vim_ctrl+p",
+        "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "-extension.vim_ctrl+k",
+        "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "-extension.vim_ctrl+s",
+        "when": "editorTextFocus && vim.active && vim.use<C-s> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "-extension.vim_ctrl+y",
+        "when": "editorTextFocus && vim.active && vim.use<C-y> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "editorScroll",
+        "args": {
+            "to": "down",
+            "by": "wrappedLine",
+            "value": 1,
+            "revealCursor": true
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+y",
+        "command": "editorScroll",
+        "args": {
+            "to": "up",
+            "by": "wrappedLine",
+            "value": 1,
+            "revealCursor": true
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorTextFocus && !suggestWidgetVisible && vim.mode != 'Normal'"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetVisible"
+    },
 
     // Vim leader strokes
-    // , s w comm actions.find when editorTextFocus && vim.mode == 'Visual'
+    {
+        "key": ", s w",
+        "command": "actions.find",
+        "when": "editorTextFocus && vim.mode == 'Visual'"
+    },
+
+    // Netrw explorer keybindings
+    {
+        "key": "shift+d",
+        "command": "deleteFile",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
+    {
+        "key": "shift+r",
+        "command": "renameFile",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
+    {
+        "key": "shift+5",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
 ]

@@ -14,6 +14,7 @@ alias lfindd='sudo find . -type d -name'
 alias sdn='shutdown -h now'
 alias btctl='bluetoothctl'
 alias asearch='apt-cache search'
+alias gstat='git status'
 
 # Apps
 alias vd='visidata'

@@ -1,6 +1,6 @@
 export PATH=$PATH:/home/amarvin/.local/bin
 export PATH=$PATH:/usr/local/cuda-12.2/bin
-export PATH=$PATH:/home/amarvin/go/bin
+export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/amarvin/.local/apps
 export PATH="/home/amarvin/.local/apps/flutter/bin:$PATH"
 

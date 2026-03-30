@@ -31,5 +31,8 @@
     "[python]": {
         "editor.wordBasedSuggestions": "allDocuments",
         "editor.suggest.showWords": true,
-    }
+    },
+
+    "git.confirmSync": false,
+    "claudeCode.preferredLocation": "panel",
 }
