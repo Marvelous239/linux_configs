@@ -72,6 +72,16 @@
         "command": "workbench.action.focusBelowGroup",
         "when": "editorTextFocus"
     },
+    {
+        "key": "ctrl+shift+up",
+        "command": "workbench.action.compareEditor.focusSecondarySide",
+        "when": "inDiffEditor"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "workbench.action.compareEditor.focusPrimarySide",
+        "when": "inDiffEditor"
+    },
 
     // Tmux style keybindings for focusing different areas of the workbench
     {
@@ -243,13 +253,14 @@
         "command": "selectPrevSuggestion",
         "when": "suggestWidgetVisible"
     },
+    // Vim ctrl+a -> ctrl+a ctrl+a
 
     // Vim leader strokes
-    {
-        "key": ", s w",
-        "command": "actions.find",
-        "when": "editorTextFocus && vim.mode == 'Visual'"
-    },
+    //{
+    //    "key": ", r",
+    //    "command": "editor.action.rename",
+    //    "when": "" + vim.mode = 'Normal'
+    //},
 
     // Netrw explorer keybindings
     {
@@ -272,4 +283,8 @@
         "command": "explorer.newFolder",
         "when": "explorerViewletFocus && !inputFocus"
     },
+    // findInFolder -> shift+f
+
+    // Misc
+    findReferances -> ctrl+[
 ]
