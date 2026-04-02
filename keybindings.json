@@ -253,14 +253,23 @@
         "command": "selectPrevSuggestion",
         "when": "suggestWidgetVisible"
     },
-    // Vim ctrl+a -> ctrl+a ctrl+a
+    {
+        "key": "ctrl+a ctrl+a",
+        "command": "extension.vim_ctrl+a",
+        "when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+a",
+        "command": "-extension.vim_ctrl+a",
+        "when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
+    },
 
     // Vim leader strokes
-    //{
-    //    "key": ", r",
-    //    "command": "editor.action.rename",
-    //    "when": "" + vim.mode = 'Normal'
-    //},
+    {
+        "key": ", r",
+        "command": "editor.action.rename",
+        "when": "vim.mode != 'Normal'"
+    },
 
     // Netrw explorer keybindings
     {
@@ -283,8 +292,31 @@
         "command": "explorer.newFolder",
         "when": "explorerViewletFocus && !inputFocus"
     },
-    // findInFolder -> shift+f
+    {
+        "key": "shift+f",
+        "command": "filesExplorer.findInFolder",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
 
     // Misc
-    findReferances -> ctrl+[
+    {
+        "key": "ctrl+[",
+        "command": "references-view.findReferences",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "shift+alt+f12",
+        "command": "-references-view.findReferences",
+        "when": "editorHasReferenceProvider"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "-editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "-extension.vim_ctrl+[",
+        "when": "editorTextFocus && vim.active && vim.use<C-[> && !inDebugRepl"
+    },
 ]
